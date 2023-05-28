@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import './Auth.css'
 import Logo from '../../img/logo.png'
 import {useDispatch, useSelector} from 'react-redux'
-import { logIn } from '../../actions/AuthAction'
-import { signUp } from '../../api/AuthRequest'
+import { logIn } from '../../actions/AuthAction.js'
+import { signUp } from '../../api/AuthRequest.js'
 
 const Auth = () => {
     const dispatch = useDispatch()
@@ -65,19 +65,23 @@ const Auth = () => {
                 {isSignUp &&(
                 <div>
                     <input type='text' placeholder='First Name' className='infoInput' name='firstname'
-                    onChange={handleChange}/>
+                    onChange={handleChange}
+                    value={data.firstname}/>
                     <input type='text' placeholder='Last Name' className='infoInput' name='lastname'
-                    onChange={handleChange}/>
+                    onChange={handleChange}
+                    value={data.lastname}/>
                 </div>
             )}              
                 <div>
                     <input type='text' placeholder='Username' className='infoInput' name='username'
-                    onChange={handleChange}/>
+                    onChange={handleChange}
+                    value={data.username}/>
                 </div>
 
                 <div>
                 <input type='password' placeholder='Password' className='infoInput' name='password'
-                onChange={handleChange}/>
+                onChange={handleChange}
+                value={data.password}/>
                 {isSignUp &&
                 <input type='password' placeholder='Confirm Password' className='infoInput' name='confirmpass'
                 onChange={handleChange}
